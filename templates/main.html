@@ -1,0 +1,126 @@
+{% load static %}
+
+<main class="main">
+    <section class="filters container" id="proyectos">
+        <!--=============== FILTERS TABS ===============-->
+        <ul class="filters__content">
+            <button class="filters__button filter-tab-active" data-target="#projects">
+                Projects
+            </button>
+            <button class="filters__button" data-target="#skills">
+                Skills
+            </button>
+        </ul>
+        <div class="filters__sections">
+            <!--=============== PROJECTS ===============-->
+            <div class="projects__content grid filters__active" data-content id="projects">
+                {% for proyect in proyectos %}
+                    <article class="projects__card">
+                        <img src="{{ proyect.foto.url }}" alt="" class="projects_img">
+                    
+                        <div class="projects__modal">
+                            <div>
+                                <span class="projects__subtitle">{{ proyect.nombre }}</span>
+                                <h3 class="projects__title">{{ proyect.descripcion }}</h3>
+                                <a href="{{ proyect.link_demo }}" class="projects__buttons button button__small" rel="ver">
+                                    Ver Demo <i class="ri-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+                
+            </div>
+            
+            <!--=============== SKILLS ===============-->
+            <div class="skills__content grid" data-content id="skills">
+                <div class="skills__area">
+                    <h3 class="skills__title">
+                        {{ frontend.nombre }}
+                    </h3>
+
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            {% for front_hab in frontend_habilidad %}
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">{{ front_hab.nombre }}</h3>
+                                        <span class="skills__level">Basic</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills__area">
+                    <h3 class="skills__title">
+                        {{ backend.nombre }}
+                    </h3>
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            {% for back_hab in backend_habilidad %}
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">{{ back_hab.nombre }}</h3>
+                                        <span class="skills__level">{{ back_hab.nivel }}</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!--==================== CONTACT ME ====================-->
+     <section class="contact section" id="contact">
+        <h2 class="section__title">Contact Me</h2>
+        <span class="section__subtitle">Get in touch</span>
+
+        <div class="contact__container contai grid">
+            <div>
+                <div class="contact__information">
+                    <i class="uil uil-phone contact__icon"></i>
+
+                    <div>
+                        <h3 class="contact__title">Call Me</h3>
+                        <span class="contact__subtitle">{{ perfil.telefono }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="contact__information">
+                    <i class="uil uil-envelope contact__icon"></i>
+
+                    <div>
+                        <h3 class="contact__title">Mail</h3>
+                        <span class="contact__subtitle">{{ perfil.correo }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="contact__information">
+                    <i class="uil uil-map-marker contact__icon"></i>
+
+                    <div>
+                        <h3 class="contact__title">Location</h3>
+                        <span class="contact__subtitle">{{ perfil.lugar_residencia }}</span>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'contactar.html' %}
+
+
+        </div>
+    </section>
+
+</main>

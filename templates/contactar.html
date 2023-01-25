@@ -1,0 +1,46 @@
+
+<form action="" class="contact__form grid" method="post">
+    {%csrf_token%}
+    <div class="contact__inputs grid">
+        <div class="contact__content">
+            <label for="" class="contact__label">Name :</label>
+            <input type="text" class="contact__input" name="nombre">
+        </div>
+        <div class="contact__content">
+            <label for="" class="contact__label">Email :</label>
+            <input type="email" class="contact__input" name="email">
+        </div>
+    </div>
+    <div class="contact__content">
+        <label for="" class="contact__label">Project Name :</label>
+        <input type="text" class="contact__input" name="project">
+    </div>
+    <div class="contact__content">
+        <label for="" class="contact__label">Message :</label>
+        <textarea id="" cols="0" rows="7" class="contact__input" name="mensaje"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="button button--flex">
+            Send Message
+            <i class="uil uil-message button__icon"></i>
+        </button>
+    </div>
+</form> 
+
+{% block sweetalert %}
+<script>
+    "{% if messages %}"
+        var html = '<p>';
+        "{% for message in messages %}"
+            html += '{{ message }}<br>';
+        "{% endfor %}"
+        html += '</p>';
+        Swal.fire({
+            title: 'Succes',
+            html: html,
+            icon: 'success'
+        });
+    "{% endif %}"
+</script>        
+{% endblock sweetalert %}

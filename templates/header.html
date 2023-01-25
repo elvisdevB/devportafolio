@@ -1,0 +1,58 @@
+<header class="profile container">
+    <!-- Theme black -->
+
+    <i class="ri-moon-line change-theme" id="theme-button"></i>
+    <div class="profile__container grid">
+        <div class="profile__data">
+            <div class="profile__border">
+                <div class="profile__perfil" style="background-image: url('{{ perfil.foto.url }}');">
+                </div>
+            </div>
+
+            <h2 class="profile__name">{{ perfil.nombre }} {{ perfil.apellido }}</h2>
+            <h3 class="profile__profession">{{ perfil.cargo }}</h3>
+
+            <ul class="profile__social">
+                <a href="{{ perfil.instagram }}" target="_blank" class="profile__social-link">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="{{ perfil.linkedin }}" target="_blank" class="profile__social-link">
+                    <i class="ri-linkedin-box-line"></i>
+                </a>
+                <a href="{{ perfil.github }}" target="_blank" class="profile__social-link">
+                    <i class="ri-github-line"></i>
+                </a>
+            </ul>
+        </div>
+
+        <div class="profile__info grid">
+            <div class="profile__info-group">
+                <h3 class="profile__info-number">{{ perfil.anos_trabajo }}</h3>
+                <p class="profile__info-description">Years of <br>work</p>
+            </div>
+            <div class="profile__info-group">
+                <h3 class="profile__info-number">+{{ perfil.proyectos_completados }}</h3>
+                <p class="profile__info-description">Completed <br>projects</p>
+            </div>
+            <div class="profile__info-group">
+                <h3 class="profile__info-number">{{ perfil.clientes_satisfechos }}</h3>
+                <p class="profile__info-description">Satisfied <br>customer</p>
+            </div>
+        </div>
+
+        <div class="profile__buttons">
+            <a download="" href="{{ perfil.cv.url }}" class="button">
+                Dowload CV <i class="ri-download-line"></i>
+            </a>
+
+            <div class="profile__buttons-small">
+                <a href="{{ perfil.whatsaap }}" target="_blank" class="button button__small button__gray">
+                    <i class="ri-whatsapp-line"></i>
+                </a>
+                <a href="{{ perfil.telegram }}" target="_blank" class="button button__small button__gray">
+                    <i class="ri-telegram-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

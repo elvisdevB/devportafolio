@@ -1,0 +1,9 @@
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+__pycache__/
+db.sqlite3
+
+#settings
+devportafolio/config/base.py
+devportafolio/config/desarrollo.py

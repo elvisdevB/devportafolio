@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% load static %}
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!-- Unicons -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+        <!-- Lib adicional -->
+        <script src="{% static 'librerias/sweetalert2-9.10.0/sweetalert2.all.min.js' %}"></script>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <title>Mini portfolio website - Bedimcode</title>
+    </head>
+    <body>
+        <!--=============== HEADER PROFILE ===============-->
+
+        {% include 'header.html' %}
+
+        <!--=============== MAIN ===============-->
+
+        {% include 'main.html' %}
+
+
+        <!--=============== FOOTER ===============-->
+
+        {% include 'footer.html' %}
+
+        {% block sweetalert %}
+        
+        {% endblock sweetalert %}
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="{% static 'js/scrollreveal.min.js' %}"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
